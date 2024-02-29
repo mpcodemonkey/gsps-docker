@@ -1,0 +1,17 @@
+# modified for use on unraid (and other container managers)
+version: '1'
+services:
+  grasscutter:
+    build:
+      context: .
+      target: development
+    volumes:
+      - resources:/home/gsps/resources
+    ports:
+      - "22102:22102/udp"
+      - "80:80/tcp"
+    stdin_open: true
+    tty: true
+volumes:
+ data:
+ resources:
